@@ -8,7 +8,7 @@ const setup = (app) => {
       if (req.session.palabraSecreta) {
         return res.redirect('/profile');
       }//Aquí va código dentro
-    res.send(`
+      res.send(`
         <html>
           <body>
             <h1>Página de Inicio</h1>
@@ -22,7 +22,7 @@ const setup = (app) => {
         </html>
       `);
     })
-      app.post('/profile', middlewares.validarPalabraMiddleware, (req, res) => {
+    app.post('/profile', middlewares.validarPalabraMiddleware, (req, res) => {
         res.send(`
           <h1>Ruta del Perfil</h1>
           <form method="post" action="/logout">
@@ -30,7 +30,7 @@ const setup = (app) => {
           </form>
         `);
       });
-      app.get('/profile', middlewares.verificarSesionMiddleware, (req, res) => {
+    app.get('/profile', middlewares.verificarSesionMiddleware, (req, res) => {
         res.send(`
           <h1>Ruta del Perfil (Sesión activa)</h1>
           <form method="post" action="/logout">

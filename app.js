@@ -10,8 +10,9 @@ const PORT = 4000;
 const middlewares = require('./middlewares');
 const routes = require('./routes');
 
-routes.setup(app);
+
 middlewares.setupAPP(app);
+routes.setup(app);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
